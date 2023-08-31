@@ -1,0 +1,31 @@
+@import "../abstracts/mixins";
+
+.row{
+    max-width: $grid-width;
+    background-color: #eee;
+    margin:0 auto;
+   
+
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    [class^="col-"]{
+        width: calc((100% -  #{$gutter-vertical}) / 2);
+        background-color: orangered;
+        float: left;
+
+        &:not(:last-child){
+            margin-right:  $gutter-horizontal;
+        }
+    }
+
+    
+
+    .col-1-3{
+        width: calc((100% - 2 * #{$gutter-vertical}) / 3);
+
+    }
+}
